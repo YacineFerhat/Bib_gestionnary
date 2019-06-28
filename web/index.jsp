@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 21 juin 2019, 16:52:51
+    Author     : Ferhat Yacine
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +23,7 @@
 
 
   </head>
-  <body>
+  <body style="background-image: linear-gradient(to bottom right, maroon, white 60%);">
     <section class="hero is-fullheight">
         <div class="hero-body">
             <div class="container">
@@ -30,10 +37,11 @@
                                 </h1>
                                 <br/>
                             </div>
+                            <form method="Post" action="Index">
                             <div class="field">
                                 <label class="label has-text-left">Email</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input class="input is-danger" type="email" placeholder="Email input">
+                                    <input name="email" class="input is-danger" type="email" placeholder="Email input">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -46,7 +54,7 @@
                             <div class="field">
                                 <label class="label has-text-left">Password</label>
                                 <p class="control has-icons-left">
-                                    <input class="input" type="password" placeholder="Password">
+                                    <input name="passWord" class="input" type="password" placeholder="Password">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -63,13 +71,23 @@
                             
                             <div class="field ">
                                 <div class="buttons is-right">
+                                    <a href="Register.jsp" class="button is-info is-left">
+                                        <span class="icon is-left is-small">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                        </span>
+                                        . Register
+                                        
+                                    </a>
+                                    <input type="submit" class="button is-danger" value="Submit">
                                     <span class="button is-danger">
                                         <span class="icon is-left is-small">
                                             <i class="fas fa-sign-in-alt"></i>
                                         </span>
-                                        . Submit</span>
+                                        . Submit
+                                    </span>
                                 </div>
                             </div>
+                            </form>
                         </div>
                     </div>
                     <div class="column">
