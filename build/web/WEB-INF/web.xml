@@ -20,6 +20,10 @@
         <servlet-name>Validate</servlet-name>
         <servlet-class>Validate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddBook</servlet-name>
+        <servlet-class>AddBook</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/Index</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Validate</servlet-name>
         <url-pattern>/Validate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddBook</servlet-name>
+        <url-pattern>/AddBook</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

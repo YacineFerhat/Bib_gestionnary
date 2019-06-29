@@ -10,8 +10,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://kit.fontawesome.com/773695578b.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <title>Mange the books</title>
+    <title>Manage the books</title>
 
     <style>
         .center , .center-column, .top, .right, .bottom, .left{
@@ -39,7 +40,9 @@
         .single-spaced, .single-spaced *{
             line-height: 1;
         }
-
+        .modal{
+            padding-top: 100px;
+        }
     </style>
 </head>
 <body>
@@ -82,9 +85,105 @@
                                         <p class="control">
                                             <input class="button" value="Search">
                                         </p>
+                                        <p class="control">
+                                            <input class="button is-danger" id="OpenModal" value="add a book">
+                                        </p>
+                                        
+                                        
+                                        
                                     </div>
                             </form>
                         </div>
+                    </div>
+                </div>
+                
+                <!-->  Modals  <!-->
+                
+                <div class="modal" id="ModalToOpen">
+                    <div class="modal-background"></div>
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Add a book</p>
+                                <button id="CloseModal" class="delete" aria-label="close"></button>
+                            </header>
+                            <section class="modal-card-body">
+                              <!-- Content ... -->
+                              <form action="AddBook" method="get">
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Title</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Apprendre à coder" name="BookTitle">
+                                            <span class="icon is-small is-left">
+                                              <i class="fas fa-book"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Book's domain</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Coding" name="BookDomain">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-tags"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Book's Resume</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="textarea" placeholder="e.g made for begginer, to learn how to code !" name="BookResume">                                                <span class="icon is-small is-left">
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Nb Pages</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input is-success" type="text" placeholder="520" name="BookPages">
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                
+                                <div class="field is-grouped is-grouped-centered">
+                                    <p class="control">
+                                        <input type="submit" value="Submit" class="button is-primary">
+                                        
+                                    </p>
+                                    <p class="control">
+                                        <input type="submit" value="Cancel" class="button is-danger">
+                                        
+                                    </p>
+                                </div>
+                           </form>
+                            </section>
+                        
                     </div>
                 </div>
                 <div class="columns is-centered">
@@ -151,6 +250,7 @@
             </div>
         </div>
     </section>
-    
+    <script src="js/main.js"></script>
+
 </body>
 </html>
