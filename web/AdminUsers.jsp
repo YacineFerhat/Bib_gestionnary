@@ -10,6 +10,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://kit.fontawesome.com/773695578b.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Users</title>
 
@@ -39,10 +40,10 @@
         .single-spaced, .single-spaced *{
             line-height: 1;
         }
-
-        .hero-head{
-            background-color: #bdc3c7
+        .modal{
+            padding-top: 50px;
         }
+       
     </style>
 </head>
 <body>
@@ -50,15 +51,15 @@
         <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <p class="navbar-item">Bouquini</p>
+                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
-                    <p class="navbar-item">Users</p>
-                    <p class="navbar-item">Books</p>
-                    <p class="navbar-item">Writers</p>
+                    <a href="AdminUsers.jsp" class="navbar-item">Users</a>
+                    <a href="AdminBooks.jsp" class="navbar-item">Books</a>
+                    <a href="AdminWriters.jsp" class="navbar-item">Writers</a>
                 </div>
                 <div class="column right">
-                    <p class="navbar-item">Disconnect</p>
+                    <a href="index.jsp" class="navbar-item">Disconnect</a>
                 </div>
             </div>
         </div>
@@ -85,11 +86,125 @@
                                         <p class="control">
                                             <input class="button" value="Search">
                                         </p>
+                                        <p class="control">
+                                            <input class="button is-danger" id="OpenModal" value="add a user">
+                                        </p>
                                     </div>
                             </form>
                         </div>
                     </div>
                 </div>
+                
+                    
+                <div class="modal" id="ModalToOpen">
+                    <div class="modal-background"></div>
+                        <div class="modal-card">
+                            <header class="modal-card-head">
+                                <p class="modal-card-title">Add a user</p>
+                                <button id="CloseModal" class="delete" aria-label="close"></button>
+                            </header>
+                            <section class="modal-card-body">
+                              <!-- Content ... -->
+                              <form action="AddUser" method="get">
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">User's family name</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Ferhat" name="UserFamilyName">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">User's first name</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Yacine" name="UserFirstName">
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-user"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">User's email</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail">                                                <span class="icon is-small is-left">
+                                                    <i class="fas fa-envelope"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">User's password</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input" type="password" placeholder="****" name="UserPassWord">
+                                                <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+                                 <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Confirm password</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input" type="password" placeholder="****" name="UserPassWordConfirm">
+                                                <span class="icon is-small is-left">
+                                                <i class="fas fa-lock"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                
+                                <div class="field is-grouped is-grouped-centered">
+                                    <p class="control">
+                                        <input type="submit" value="Submit" class="button is-primary">
+                                        
+                                    </p>
+                                    <p class="control">
+                                        <input type="submit" value="Cancel" class="button is-danger">
+                                        
+                                    </p>
+                                </div>
+                           </form>
+                            </section>
+                        
+                    </div>
+                </div>
+                
                 <div class="columns is-centered">
                     <div class="column">
                         
@@ -147,6 +262,8 @@
             </div>
         </div>
     </section>
-    
+    <script src="js/main.js"></script>
+
+                            
 </body>
 </html>

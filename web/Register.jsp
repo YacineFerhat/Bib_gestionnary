@@ -68,7 +68,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Family Name" name="FamilyName">
+                                            <input class="input" type="text" placeholder="Family Name" name="UserFamilyName">
                                             <span class="icon is-small is-left">
                                             <i class="fas fa-user"></i>
                                             </span>
@@ -84,7 +84,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="First Name" name="FirstName">
+                                            <input class="input" type="text" placeholder="First Name" name="UserFirstName">
                                             <span class="icon is-small is-left">
                                             <i class="fas fa-user"></i>
                                             </span>
@@ -101,7 +101,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="email" placeholder="yacine.frhat@gmail.com" name="mail">
+                                                <input class="input is-success" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail">
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                                 </span>
@@ -121,7 +121,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="password" placeholder="****" name="passWord">
+                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWord">
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                                 </span>
@@ -141,7 +141,7 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="password" placeholder="****" name="confirmPassWord">
+                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWordConfirm">
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                                 </span>

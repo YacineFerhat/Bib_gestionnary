@@ -20,7 +20,13 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .modal{
+            padding-top: 80px;
+        }
+    </style>
+    
 
   </head>
   <body style="background-image: linear-gradient(to bottom right, maroon, white 60%);">
@@ -71,14 +77,18 @@
                             
                             <div class="field ">
                                 <div class="buttons is-right">
-                                    <a href="Register.jsp" class="button is-info is-left">
+                                    <a id="OpenModal" class="button is-info is-left">
                                         <span class="icon is-left is-small">
                                             <i class="fas fa-sign-in-alt"></i>
                                         </span>
                                         . Register
                                         
                                     </a>
+                                   
                                     <input type="submit" class="button is-danger" value="Submit">
+                                   
+                                    
+                                    
                                     <span class="button is-danger">
                                         <span class="icon is-left is-small">
                                             <i class="fas fa-sign-in-alt"></i>
@@ -123,5 +133,125 @@
             </div>
         </div>
     </section>
+      
+    <div class="modal" id="ModalToOpen">
+        <div class="modal-background"></div>
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Register !</p>
+                    <button id="CloseModal" class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                  <!-- Content ... -->
+                  <form action="RegisterUser" method="get">
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Family Name</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Family Name" name="UserFamilyName">
+                                            <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">First Name</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="First Name" name="UserFirstName">
+                                            <span class="icon is-small is-left">
+                                            <i class="fas fa-user"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Email</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input is-success" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail">
+                                                <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                <i class="fas fa-check"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">PassWord</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWord">
+                                                <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                <i class="fas fa-check"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Confirm PassWord</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded has-icons-left has-icons-right">
+                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWordConfirm">
+                                                <span class="icon is-small is-left">
+                                                <i class="fas fa-envelope"></i>
+                                                </span>
+                                                <span class="icon is-small is-right">
+                                                <i class="fas fa-check"></i>
+                                                </span>
+                                            </p>
+                                        </div>    
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="field is-grouped is-grouped-centered">
+                                    <p class="control">
+                                        <input type="submit" value="Submit" class="button is-primary">
+                                        
+                                    </p>
+                                    <p class="control">
+                                        <input value="Cancel" class="button is-danger">
+                                        
+                                    </p>
+                                </div>
+                           </form>
+                </section>
+        </div>
+    </div>
+
+<script src="js/main.js"></script>
+
   </body>
 </html>

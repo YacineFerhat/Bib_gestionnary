@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Driver;
 import java.io.IOException;
@@ -26,7 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Ferhat Yacine
  */
 
-public class RegisterUser extends HttpServlet {
+public class AddUser extends HttpServlet {
     protected void doGet(HttpServletRequest r, HttpServletResponse s)throws IOException, ServletException{
         String FamilyName= r.getParameter("UserFamilyName");
         String FirstName= r.getParameter("UserFirstName");
@@ -50,11 +44,10 @@ public class RegisterUser extends HttpServlet {
                 user_id = rs.getString(1);
             }
            st.executeUpdate("insert into utilisateur values('"+user_id+"','"+FamilyName+"','"+FirstName+"','"+mail+"','"+password+"','0');");
-           System.out.println("Succes");
-           RequestDispatcher rd = r.getRequestDispatcher("HomeUser.jsp");
+           RequestDispatcher rd = r.getRequestDispatcher("AdminUsers.jsp");
            rd.include(r,s);
         }catch (ClassNotFoundException | SQLException ex) {
-            Logger.getLogger(RegisterUser.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AddUser.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         }

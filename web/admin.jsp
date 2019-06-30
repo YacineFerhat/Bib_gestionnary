@@ -48,18 +48,18 @@
 </head>
 <body>
     <section class="hero is-fullheight is-black">
-        <div class="hero-head">
+         <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a class="navbar-item">Bouquini</a>
+                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
-                    <a class="navbar-item" href="AdminUsers.jsp">Users</a>
-                    <a class="navbar-item" href="AdminBooks.jsp">Books</a>
-                    <a class="navbar-item" href="AdminWriters.jsp">Writers</a>
+                    <a href="AdminUsers.jsp" class="navbar-item">Users</a>
+                    <a href="AdminBooks.jsp" class="navbar-item">Books</a>
+                    <a href="AdminWriters.jsp" class="navbar-item">Writers</a>
                 </div>
                 <div class="column right">
-                    <a class="navbar-item">Disconnect</a>
+                    <a href="index.jsp" class="navbar-item">Disconnect</a>
                 </div>
             </div>
         </div>

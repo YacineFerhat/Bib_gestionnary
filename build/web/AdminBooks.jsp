@@ -47,18 +47,18 @@
 </head>
 <body>
     <section class="hero is-fullheight">
-        <div class="hero-head has-text-white">
+         <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <p class="navbar-item">Bouquini</p>
+                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
-                    <p class="navbar-item">Users</p>
-                    <p class="navbar-item">Books</p>
-                    <p class="navbar-item">Writers</p>
+                    <a href="AdminUsers.jsp" class="navbar-item">Users</a>
+                    <a href="AdminBooks.jsp" class="navbar-item">Books</a>
+                    <a href="AdminWriters.jsp" class="navbar-item">Writers</a>
                 </div>
                 <div class="column right">
-                    <p class="navbar-item">Disconnect</p>
+                    <a href="index.jsp" class="navbar-item">Disconnect</a>
                 </div>
             </div>
         </div>
@@ -97,7 +97,6 @@
                     </div>
                 </div>
                 
-                <!-->  Modals  <!-->
                 
                 <div class="modal" id="ModalToOpen">
                     <div class="modal-background"></div>

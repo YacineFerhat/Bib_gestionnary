@@ -24,6 +24,14 @@
         <servlet-name>AddBook</servlet-name>
         <servlet-class>AddBook</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddWriter</servlet-name>
+        <servlet-class>AddWriter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddUser</servlet-name>
+        <servlet-class>AddUser</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/Index</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>AddBook</servlet-name>
         <url-pattern>/AddBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddWriter</servlet-name>
+        <url-pattern>/AddWriter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUser</servlet-name>
+        <url-pattern>/AddUser</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

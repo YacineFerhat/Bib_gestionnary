@@ -48,11 +48,11 @@ public class AddBook extends HttpServlet {
                 book_id = rs.getString(1);
             }
            st.executeUpdate("insert into livre values('"+book_id+"','"+BookTitle+"','"+BookResume+"','"+BookPages+"','"+BookDomain+"','0');");
-         
+           RequestDispatcher rd= request.getRequestDispatcher("AdminBooks.jsp");
+           rd.forward(request, response);
         }catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(AddBook.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         }
      
     }
