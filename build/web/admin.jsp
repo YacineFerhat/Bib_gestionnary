@@ -94,7 +94,7 @@
                         </span>
                         <h1 class="title is-4 has-text-dark"> Books</h1>
                         <p>
-                            Here, u can access to the books of the system, you will be able to consult their informations, add, delete and modify.
+                            Here, u can access to the books stored in the system, you will be able to consult their informations, add, delete and modify.
                         </p>
                         <br>
                         <a href="AdminBooks.jsp" class="button">Move on</a>
@@ -107,7 +107,7 @@
                         </span>
                         <h1 class="title is-4 has-text-dark"> Writers</h1>
                         <p>
-                            Here, you can access to the writers and manage them
+                            Here, you can access to the writers, you will be able to consult their informations, add writers, modify or delete some.
                         </p>
                         <br>
                         <a href="AdminWriters.jsp" class="button">Move on</a>

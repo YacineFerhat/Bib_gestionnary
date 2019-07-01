@@ -41,7 +41,7 @@
             line-height: 1;
         }
         .modal{
-            padding-top: 100px;
+            padding-top: 40px;
         }
     </style>
 </head>
@@ -107,7 +107,7 @@
                             </header>
                             <section class="modal-card-body">
                               <!-- Content ... -->
-                              <form action="AddBook" method="get">
+                              <form action="AddBook" method="post" enctype="multipart/form-data">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
                                         <label class="label">Title</label>
@@ -162,13 +162,34 @@
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="text" placeholder="520" name="BookPages">
+                                                <input class="input " type="text" placeholder="520" name="BookPages">
                                             </p>
                                         </div>    
                                     </div>
                                 </div>
                                 <br>
 
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Book's covert</label>
+                                    </div>
+                                    <div class="field-body">
+                                       <div class="file">
+                                            <label class="file-label">
+                                                <input class="file-input" type="file" name="BookCovert">
+                                                <span class="file-cta">
+                                                    <span class="file-icon">
+                                                        <i class="fas fa-upload"></i>
+                                                    </span>
+                                                <span class="file-label">
+                                                  Choose a file
+                                                </span>
+                                              </span>
+                                            </label>
+                                          </div>
+                                    </div>
+                                </div>
+                                <br>
                                 
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
@@ -229,7 +250,6 @@
                                             <div class="buttons are-small">
                                                 <a class="button is-danger">delete</a>
                                                 <a class="button is-warning">modify</a>
-                                                <a class="button is-info">consult</a>
                                             </div>
                                         </td>
                                     </tr>

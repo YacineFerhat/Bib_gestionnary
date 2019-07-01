@@ -33,13 +33,16 @@ public class Index extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("passWord");
         
-        if(Validate.checkUser(email, pass))
+        if(Validate.checkUser(email, pass,"1"))
         {
             RequestDispatcher rs = request.getRequestDispatcher("/admin.jsp");
             rs.forward(request, response);
         }
-        else
-        {
+        else if(Validate.checkUser(email, pass,"0")){
+            RequestDispatcher rs = request.getRequestDispatcher("/HomeUser.jsp");
+            rs.forward(request, response);
+        }
+        else{
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.include(request,response);
             PrintWriter print = response.getWriter();

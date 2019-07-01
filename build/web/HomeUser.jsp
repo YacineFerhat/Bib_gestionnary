@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +9,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://kit.fontawesome.com/773695578b.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <title>Home</title>
     
     <style>
@@ -63,9 +66,62 @@
                         
                     </div>
                 </div>
+                   <div class="box">
+                       <h2 class="subtitle is-5 has-text-centered"> Rechercher un livre !</h2>
+                       <form action="user" method="POST">
+                                    <div class="field has-addons">
+                                        <p class="control">
+                                            <span class="select">
+                                            <select>
+                                                <option>Titre</option>
+                                                <option>Auteur</option>
+                                                <option>Domaine</option>
+                                                
+                                            </select>
+                                            </span>
+                                        </p>
+                                        <p class="control is-expanded">
+                                            <input class="input" type="text" placeholder="Harry Potter ">
+                                        </p>
+                                        <p class="control">
+                                            <input class="button is-black" value="Search">
+                                        </p>     
+                                    </div>
+                            </form>
+                       <br>
+                 <c:forEach var = "i" begin = "1" end = "5">
+                     <div class="box">
+                     <article class="media" id="MediaToClose">
+                    <figure class="media-left">
+                      <p class="image is-128x128">
+                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                      </p>
+                    </figure>
+                    <div class="media-content">
+                      <div class="content">
+                        <p>
+                          <strong>Title Auteur Domaine</strong> 
+                          <br>
+                          Resumé
+                          <br>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                        </p>
+                      </div>s
+                    </div>
+                    <div class="media-right">
+                      <button class="delete" id="delete"></button>
+                    </div>
+                  </article>
+                         </div>
+                     
+                </c:forEach>
             </div>
+            </div>
+            
         </div>
     </section>
+    <script src="js/main.js"></script>
+
 <body>
     
 </body>
