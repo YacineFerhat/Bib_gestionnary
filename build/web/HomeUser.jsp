@@ -1,5 +1,9 @@
+<%@page import="java.io.OutputStream"%>
+<%@page import="java.sql.*;" %>
+
 <!DOCTYPE html>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -89,35 +93,51 @@
                                     </div>
                             </form>
                        <br>
-                 <c:forEach var = "i" begin = "1" end = "5">
-                     <div class="box">
-                     <article class="media" id="MediaToClose">
-                    <figure class="media-left">
-                      <p class="image is-128x128">
-                        <img src="https://bulma.io/images/placeholders/128x128.png">
-                      </p>
-                    </figure>
-                    <div class="media-content">
-                      <div class="content">
-                        <p>
-                          <strong>Title Auteur Domaine</strong> 
-                          <br>
-                          Resumé
-                          <br>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
-                        </p>
-                      </div>s
-                    </div>
-                    <div class="media-right">
-                      <button class="delete" id="delete"></button>
-                    </div>
-                  </article>
-                         </div>
-                     
-                </c:forEach>
-            </div>
-            </div>
-            
+                       
+                          <%
+                            Blob image = null;
+                            byte[] imgData = null;
+                                try{
+                                    Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
+                                    String Query = "Select Titre,Resume,NbPage,Domaine from livre";
+                                    Statement stm=conn.createStatement();
+                                    ResultSet rs = stm.executeQuery(Query);
+                                    while(rs.next()){
+                                        
+                                  %>
+                                    <div class="box">
+                                        <article class="media" id="MediaToClose">
+                                       <figure class="media-left">
+                                         <p class="image is-128x128">
+                                           <img src="https://bulma.io/images/placeholders/128x128.png">
+                                         </p>
+                                       </figure>
+                                       <div class="media-content">
+                                         <div class="content">                                          
+                                           <ul>
+                                               <li><strong>Titre : </strong><%=rs.getString("Titre")%></li>
+                                               <li><strong>Domaine : </strong><%=rs.getString("Domaine")%></li>
+                                               <li><strong>Nb Pages : </strong><%=rs.getInt("NbPage")%></li>
+                                               <li><strong>Resumé : </strong><%=rs.getString("Resume")%></li>
+                                           </ul>
+                                         </div>
+                                       </div>
+                                       <div class="media-right">
+                                         <button class="delete" id="delete"></button>
+                                       </div>
+                                     </article>
+                                    </div>
+                                  <%
+                                    }
+                                }
+                                catch(Exception ex){
+                                    out.println("erreur");
+                                }
+
+                                  %>
+                </div>
+            </div>    
         </div>
     </section>
     <script src="js/main.js"></script>
