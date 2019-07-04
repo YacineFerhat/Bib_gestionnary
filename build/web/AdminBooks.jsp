@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="livrecore"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="livresql"%>
 <%@page import="java.sql.*;" %>
 <html lang="en">
 <head>
@@ -68,35 +69,30 @@
                     <div class="column has-text-centered">
                         <div class="box">
                             <form action="user" method="POST">
-                                    <div class="field has-addons">
-                                        <p class="control">
-                                            <span class="select">
-                                            <select>
-                                                <option>Code</option>
-                                                <option>Name</option>
-                                                <option>Domain</option>
-                                                
-                                            </select>
-                                            </span>
-                                        </p>
-                                        <p class="control is-expanded">
-                                            <input class="input" type="text" placeholder="Type!">
-                                        </p>
-                                        <p class="control">
-                                            <input class="button" value="Search">
-                                        </p>
-                                        <p class="control">
-                                            <input class="button is-danger" id="OpenModal" value="add a book">
-                                        </p>
-                                        
-                                        
-                                        
-                                    </div>
+                                <div class="field has-addons">
+                                    <p class="control">
+                                        <span class="select">
+                                        <select>
+                                            <option>Code</option>
+                                            <option>Name</option>
+                                            <option>Domain</option>                                              
+                                        </select>
+                                        </span>
+                                    </p>
+                                    <p class="control is-expanded">
+                                        <input class="input" type="text" placeholder="Type!">
+                                    </p>
+                                    <p class="control">
+                                        <input class="button" value="Search">
+                                    </p>
+                                    <p class="control">
+                                        <input class="button is-danger" id="OpenModal" value="add a book">
+                                    </p>
+                               </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                
                 
                 <div class="modal" id="ModalToOpen">
                     <div class="modal-background"></div>
@@ -202,8 +198,7 @@
                                     </p>
                                 </div>
                            </form>
-                            </section>
-                        
+                        </section>
                     </div>
                 </div>
                 <div class="columns is-centered">
@@ -248,13 +243,16 @@
                                         <td><%=rs.getString("Resume")%></td>
                                         <td class="has-text-centered">
                                             <div class="buttons are-small">
-                                                <a class="button is-danger">delete</a>
-                                                <a class="button is-warning">modify</a>
+                                                <a class="button is-danger" href="DeleteBook.jsp?id=<%=rs.getInt("ISSN") %>">delete</a>
+                                                <a class="button is-warning" href='ModifyBook.jsp?u=<%= rs.getInt("ISSN")%>'>modify</a>
                                             </div>
                                         </td>
                                     </tr>
-                                  <%
-                                    }
+                              
+                  
+                                    <%
+                                      
+                                            }
                                 }
                                 catch(Exception ex){
                                     out.println("erreur");

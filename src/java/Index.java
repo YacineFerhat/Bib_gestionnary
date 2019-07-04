@@ -46,7 +46,7 @@ public class Index extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.include(request,response);
             PrintWriter print = response.getWriter();
-            print.print("<script>alert('Problème d'authentification)</script>");
+            print.print("<script>alert('Problème d'authentification')</script>");
         }
     }  
   

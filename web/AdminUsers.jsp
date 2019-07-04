@@ -195,7 +195,7 @@
                                         
                                     </p>
                                     <p class="control">
-                                        <input type="submit" value="Cancel" class="button is-danger">
+                                        <input type="reset" value="Cancel" class="button is-danger">
                                         
                                     </p>
                                 </div>
@@ -211,18 +211,20 @@
                         <table class="table is-fullwidth is-bordered is-striped is-hoverable">
                             <thead>
                                 <tr>
+                                    <th><abbr title="Id">Id</abbr></th>
                                     <th><abbr title="First Name">First Name</abbr></th>  
-                                    <th><abbr title="First Name">Last Name</abbr></th>
-                                    <th><abbr title="First Name">Email address</abbr></th>
-                                    <th><abbr title="First Name">Actions</abbr></th>
+                                    <th><abbr title="Last Name">Last Name</abbr></th>
+                                    <th><abbr title="Email">Email address</abbr></th>
+                                    <th><abbr title="Actions">Actions</abbr></th>
                                 </tr>
                             </thead>
                             <tfoot>
-                                <tr>
+                                <tr>          
+                                    <th><abbr title="Id">Id</abbr></th>
                                     <th><abbr title="First Name">First Name</abbr></th>  
-                                    <th><abbr title="First Name">Last Name</abbr></th>
-                                    <th><abbr title="First Name">Email address</abbr></th>
-                                    <th><abbr title="First Name">Actions</abbr></th>
+                                    <th><abbr title="Last Name">Last Name</abbr></th>
+                                    <th><abbr title="Email address">Email address</abbr></th>
+                                    <th><abbr title="Actions">Actions</abbr></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -230,17 +232,18 @@
                                 try{
                                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
-                                    String Query = "Select nom,prenom,email from utilisateur";
+                                    String Query = "Select id,nom,prenom,email from utilisateur";
                                     Statement stm=conn.createStatement();
                                     ResultSet rs = stm.executeQuery(Query);
                                     while(rs.next()){
                                   %><tr>
+                                        <td>#<%=rs.getString("id")%></td>  
                                         <td><%=rs.getString("nom")%></td>  
                                         <td><%=rs.getString("prenom")%></td>
                                         <td><%=rs.getString("email")%></td>
                                         <td class="has-text-centered">
                                             <div class="buttons are-small">
-                                                <a class="button is-danger">delete</a>
+                                                <a class="button is-danger" href="DeleteUser.jsp?id=<%=rs.getInt("id") %>">delete</a>
                                                 <a class="button is-warning">modify</a>
                                                 <a class="button is-info">consult</a>
                                             </div>

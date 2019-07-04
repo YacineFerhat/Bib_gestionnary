@@ -10,5 +10,14 @@ $(document).ready(function(){
             'display' : 'none'
         });
     });
- 
+    $('#OpenModalModify').click(function(){
+        $("#ModalToModify").css({
+            'display' : 'block'
+        });        
+    });
+    $('#CloseModalModify').click(function(){
+        $('#ModalToModify').css({
+            'display' : 'none'
+        });
+    });
 });

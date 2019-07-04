@@ -134,8 +134,8 @@
 
                                         <td class="has-text-centered">
                                             <div class="buttons are-small">
-                                                <a class="button is-danger">delete</a>
-                                                <a class="button is-warning">modify</a>
+                                                <a class="button is-danger" href="DeleteWriter.jsp?id=<%=rs.getInt("Num") %>">delete</a>
+                                                <a class="button is-warning" href='ModifyWriter.jsp?u=<%= rs.getInt("Num")%>'>modify</a>
                                                 <a class="button is-info">consult</a>
                                             </div>
                                         </td>
