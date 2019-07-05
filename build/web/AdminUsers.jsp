@@ -68,23 +68,23 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <div class="box">
-                            <form action="user" method="POST">
+                            <form action="AdminUsersResearch.jsp" method="POST">
                                     <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
-                                            <select>
-                                                <option>Last Name</option>
-                                                <option>First Name</option>
-                                                <option>Email</option>
-                                                
+                                            <select name="selection">
+                                                <option value="id">Number</option>
+                                                <option value="nom">Last Name</option>
+                                                <option value="prenom">First Name</option>
+                                                <option value="email">Email</option>                    
                                             </select>
                                             </span>
                                         </p>
                                         <p class="control is-expanded">
-                                            <input class="input" type="text" placeholder="Type!">
+                                            <input class="input" name="val" type="text" placeholder="Type!">
                                         </p>
                                         <p class="control">
-                                            <input class="button" value="Search">
+                                            <input class="button" type="submit" style="width:250px;" value="Search">
                                         </p>
                                         <p class="control">
                                             <input class="button is-danger" id="OpenModal" value="add a user">
@@ -94,8 +94,6 @@
                         </div>
                     </div>
                 </div>
-                
-                    
                 <div class="modal" id="ModalToOpen">
                     <div class="modal-background"></div>
                         <div class="modal-card">
@@ -215,7 +213,7 @@
                                     <th><abbr title="First Name">First Name</abbr></th>  
                                     <th><abbr title="Last Name">Last Name</abbr></th>
                                     <th><abbr title="Email">Email address</abbr></th>
-                                    <th><abbr title="Actions">Actions</abbr></th>
+                                    <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -224,7 +222,7 @@
                                     <th><abbr title="First Name">First Name</abbr></th>  
                                     <th><abbr title="Last Name">Last Name</abbr></th>
                                     <th><abbr title="Email address">Email address</abbr></th>
-                                    <th><abbr title="Actions">Actions</abbr></th>
+                                    <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -241,11 +239,10 @@
                                         <td><%=rs.getString("nom")%></td>  
                                         <td><%=rs.getString("prenom")%></td>
                                         <td><%=rs.getString("email")%></td>
-                                        <td class="has-text-centered">
-                                            <div class="buttons are-small">
+                                        <td class="has-text-centered" >
+                                            <div class="buttons is-centered are-small">
                                                 <a class="button is-danger" href="DeleteUser.jsp?id=<%=rs.getInt("id") %>">delete</a>
                                                 <a class="button is-warning">modify</a>
-                                                <a class="button is-info">consult</a>
                                             </div>
                                         </td>
                                     </tr>

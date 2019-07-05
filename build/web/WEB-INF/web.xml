@@ -32,6 +32,10 @@
         <servlet-name>AddUser</servlet-name>
         <servlet-class>AddUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>HomeUserResearch</servlet-name>
+        <servlet-class>HomeUserResearch</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
         <url-pattern>/Index</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>AddUser</servlet-name>
         <url-pattern>/AddUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeUserResearch</servlet-name>
+        <url-pattern>/HomeUserResearch</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

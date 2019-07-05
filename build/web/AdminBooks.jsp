@@ -68,22 +68,24 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <div class="box">
-                            <form action="user" method="POST">
+                            <form action="AdminBooksResearch.jsp" method="POST">
                                 <div class="field has-addons">
                                     <p class="control">
                                         <span class="select">
-                                        <select>
-                                            <option>Code</option>
-                                            <option>Name</option>
-                                            <option>Domain</option>                                              
+                                            <select name="selection">
+                                            <option value="ISSN">Code</option>
+                                            <option value="Titre">Title</option>
+                                            <option value="Domaine">Domain</option>   
+                                            <option value="NbPage">NbPages</option>                                              
+
                                         </select>
                                         </span>
                                     </p>
                                     <p class="control is-expanded">
-                                        <input class="input" type="text" placeholder="Type!">
+                                        <input class="input" name="val" type="text" placeholder="Type!">
                                     </p>
                                     <p class="control">
-                                        <input class="button" value="Search">
+                                        <input class="button" value="Search" type="submit" style="width:250px;">
                                     </p>
                                     <p class="control">
                                         <input class="button is-danger" id="OpenModal" value="add a book">
@@ -212,7 +214,7 @@
                                     <th><abbr title="Domain">Domain</abbr></th>
                                     <th><abbr title="Nbr pages">Nb pages</abbr></th>
                                     <th><abbr title="Resume">Resume</abbr></th>
-                                    <th><abbr title="Action">Actions</abbr></th>
+                                    <th><abbr title="Action"><p class="has-text-centered">Actions</p></abbr></th>
 
                                 </tr>
                             </thead>
@@ -223,7 +225,7 @@
                                     <th><abbr title="Domain">Domain</abbr></th>
                                     <th><abbr title="Nbr pages">Nb pages</abbr></th>
                                     <th><abbr title="Resume">Resume</abbr></th>
-                                    <th><abbr title="Action">Actions</abbr></th>
+                                    <th><abbr title="Action"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -241,7 +243,7 @@
                                         <td><%=rs.getString("Domaine")%></td>
                                         <td><%=rs.getInt("NbPage")%></td>
                                         <td><%=rs.getString("Resume")%></td>
-                                        <td class="has-text-centered">
+                                        <td class="has-text-centered" style="min-width:150px">
                                             <div class="buttons are-small">
                                                 <a class="button is-danger" href="DeleteBook.jsp?id=<%=rs.getInt("ISSN") %>">delete</a>
                                                 <a class="button is-warning" href='ModifyBook.jsp?u=<%= rs.getInt("ISSN")%>'>modify</a>

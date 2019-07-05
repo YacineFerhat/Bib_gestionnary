@@ -70,23 +70,23 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <div class="box">
-                            <form action="user" method="POST">
+                            <form action="AdminWritersResearch.jsp" method="POST">
                                     <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
-                                            <select>
-                                                <option>Last Name</option>
-                                                <option>First Name</option>
-                                                <option>Date of birth</option>
-                                                
-                                            </select>
+                                                <select name="selection">
+                                                    <option value="Num">Code</option>
+                                                    <option value="Nom">Last Name</option>
+                                                    <option value="Prenom">First Name</option>
+                                                    <option value="DateDeNaissance">Date of birth</option>       
+                                                </select>
                                             </span>
                                         </p>
                                         <p class="control is-expanded">
-                                            <input class="input" type="text" placeholder="Type!">
+                                            <input class="input" name="val" type="text" placeholder="Type!">
                                         </p>
                                         <p class="control">
-                                            <input class="button" value="Search">
+                                            <input class="button" type="submit" style="width:250px;" value="Search">
                                         </p>
                                         <p class="control">
                                             <input class="button is-danger" id="OpenModal" value="add a writer">
@@ -105,7 +105,7 @@
                                     <th><abbr title="FirstName">First Name</abbr></th>  
                                     <th><abbr title="LastName">Last Name</abbr></th>
                                     <th><abbr title="DateOfBirth">Date of Birth</abbr></th>
-                                    <th><abbr title="Actions">Actions</abbr></th>
+                                    <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -114,7 +114,7 @@
                                     <th><abbr title="FirstName">First Name</abbr></th>  
                                     <th><abbr title="LastName">Last Name</abbr></th>
                                     <th><abbr title="DateOfBirth">Email address</abbr></th>
-                                    <th><abbr title="Actions">Actions</abbr></th>
+                                    <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -133,10 +133,9 @@
                                         <td><%=rs.getString("DateDeNaissance")%></td>
 
                                         <td class="has-text-centered">
-                                            <div class="buttons are-small">
+                                            <div class="buttons are-small is-centered">
                                                 <a class="button is-danger" href="DeleteWriter.jsp?id=<%=rs.getInt("Num") %>">delete</a>
                                                 <a class="button is-warning" href='ModifyWriter.jsp?u=<%= rs.getInt("Num")%>'>modify</a>
-                                                <a class="button is-info">consult</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -199,7 +198,6 @@
                         </div>
                     </div>
                     <br>
-
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
                             <label class="label">Writer's Birth</label>
@@ -215,13 +213,9 @@
                         </div>
                     </div>
                     <br>
-
-
-
                     <div class="field is-grouped is-grouped-centered">
                         <p class="control">
                             <input type="submit" value="Submit" class="button is-primary">
-
                         </p>
                         <p class="control">
                             <input type="submit" value="Cancel" class="button is-danger">

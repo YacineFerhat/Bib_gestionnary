@@ -72,31 +72,29 @@
                 </div>
                    <div class="box">
                        <h2 class="subtitle is-5 has-text-centered"> Rechercher un livre !</h2>
-                       <form action="user" method="POST">
+                            <form action="HomeUserResearch.jsp" method="POST">
                                     <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
-                                            <select>
-                                                <option>Titre</option>
-                                                <option>Auteur</option>
-                                                <option>Domaine</option>
+                                            <select name="selection">
+                                                <option value="Titre">Titre</option>
+                                                <option value="Auteur">Auteur</option>
+                                                <option value="Domaine">Domaine</option>
                                                 
                                             </select>
                                             </span>
                                         </p>
                                         <p class="control is-expanded">
-                                            <input class="input" type="text" placeholder="Harry Potter ">
+                                            <input class="input" name="id"  type="text" placeholder="Harry Potter ">
                                         </p>
                                         <p class="control">
-                                            <input class="button is-black" value="Search">
+                                            <input type="submit" class="button is-black" value="Search">
                                         </p>     
                                     </div>
                             </form>
                        <br>
                        
                           <%
-                            Blob image = null;
-                            byte[] imgData = null;
                                 try{
                                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
