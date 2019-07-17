@@ -53,7 +53,7 @@
          <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item">Users</a>
@@ -102,8 +102,8 @@
                             <thead>
                                 <tr>
                                     <th><abbr title="Num">Num</abbr></th>  
-                                    <th><abbr title="FirstName">First Name</abbr></th>  
-                                    <th><abbr title="LastName">Last Name</abbr></th>
+                                    <th><abbr title="Last Name">Last Name</abbr></th>  
+                                    <th><abbr title="First Name">First Name</abbr></th>
                                     <th><abbr title="DateOfBirth">Date of Birth</abbr></th>
                                     <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
@@ -111,8 +111,8 @@
                             <tfoot>
                                 <tr>
                                     <th><abbr title="Num">Num</abbr></th>
-                                    <th><abbr title="FirstName">First Name</abbr></th>  
-                                    <th><abbr title="LastName">Last Name</abbr></th>
+                                    <th><abbr title="Last Name">Last Name</abbr></th>  
+                                    <th><abbr title="First Name">First Name</abbr></th>
                                     <th><abbr title="DateOfBirth">Email address</abbr></th>
                                     <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
@@ -134,7 +134,7 @@
 
                                         <td class="has-text-centered">
                                             <div class="buttons are-small is-centered">
-                                                <a class="button is-danger" href="DeleteWriter.jsp?id=<%=rs.getInt("Num") %>">delete</a>
+                                                <a class="button is-danger" href="DeleteWriter?id=<%=rs.getInt("Num") %>">delete</a>
                                                 <a class="button is-warning" href='ModifyWriter.jsp?u=<%= rs.getInt("Num")%>'>modify</a>
                                             </div>
                                         </td>

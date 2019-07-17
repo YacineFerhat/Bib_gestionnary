@@ -35,7 +35,7 @@ public class Index extends HttpServlet {
         
         if(Validate.checkUser(email, pass,"1"))
         {
-            RequestDispatcher rs = request.getRequestDispatcher("/admin.jsp");
+            RequestDispatcher rs = request.getRequestDispatcher("/HomeAdmin.jsp");
             rs.forward(request, response);
         }
         else if(Validate.checkUser(email, pass,"0")){
@@ -46,7 +46,8 @@ public class Index extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
             rd.include(request,response);
             PrintWriter print = response.getWriter();
-            print.print("<script>alert('Problème d'authentification')</script>");
+            print.print("<html><body><script>alert('Problème d'authentification !')</script></body></html>");
+
         }
     }  
   

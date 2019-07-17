@@ -47,7 +47,7 @@
            <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item">Users</a>
@@ -75,7 +75,7 @@
                 <div class="columns is-centered">
                     <div class="column is-8">
                         <div class="box">
-                            <form action="UpdateProcess.jsp" method="post" enctype="multipart/form-data">
+                            <form action="EditBook" method="get" enctype="multipart/form-data">
                                <%
                                 stat = conn.createStatement();
                                 String u = request.getParameter("u");

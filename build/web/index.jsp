@@ -47,7 +47,7 @@
                             <div class="field">
                                 <label class="label has-text-left">Email</label>
                                 <div class="control has-icons-left has-icons-right">
-                                    <input name="email" class="input is-danger" type="email" placeholder="Email input">
+                                    <input name="email" class="input" type="email" placeholder="Exemple@gmail.com">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -55,7 +55,7 @@
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
                                 </div>
-                                <p class="help is-danger">This email is invalid</p>
+                                <!--<p class="help is-danger">This email is invalid</p>-->
                             </div>
                             <div class="field">
                                 <label class="label has-text-left">Password</label>
@@ -77,24 +77,15 @@
                             
                             <div class="field ">
                                 <div class="buttons is-right">
-                                    <a id="OpenModal" class="button is-info is-left">
+                                    <a id="OpenModal" class="button is-info">
                                         <span class="icon is-left is-small">
-                                            <i class="fas fa-sign-in-alt"></i>
+                                            <i class="fas fa-sign-in-alt" ></i>
                                         </span>
-                                        . Register
-                                        
+                                        . Register      
                                     </a>
-                                   
-                                    <input type="submit" class="button is-danger" value="Submit">
-                                   
-                                    
-                                    
-                                    <span class="button is-danger">
-                                        <span class="icon is-left is-small">
-                                            <i class="fas fa-sign-in-alt"></i>
-                                        </span>
-                                        . Submit
-                                    </span>
+                                    <button type="submit" class="button is-danger">
+                                        <i class="fas fa-sign-in-alt" style="margin-right:5px;"> </i> Submit
+                                    </button>             
                                 </div>
                             </div>
                             </form>
@@ -239,19 +230,15 @@
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
                                         <input type="submit" value="Submit" class="button is-primary">
-                                        
                                     </p>
                                     <p class="control">
-                                        <input value="Cancel" class="button is-danger">
-                                        
+                                        <input type="reset" value="Reset" class="button is-danger">
                                     </p>
                                 </div>
                            </form>
                 </section>
         </div>
     </div>
-
-<script src="js/main.js"></script>
-
+    <script src="js/main.js"></script>
   </body>
 </html>

@@ -47,7 +47,7 @@
            <div class="hero-head is-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item">Users</a>
@@ -61,21 +61,21 @@
         </div>
         <%
             
-    String host="jdbc:mysql://localhost:3306/cawa";
-    Statement stat = null;
-    ResultSet res = null;
-    Connection conn = null;
-    PreparedStatement stmt = null;
-    Class.forName("com.mysql.jdbc.Driver").newInstance();
-    conn = DriverManager.getConnection(host,"root","");    
-%>
+        String host="jdbc:mysql://localhost:3306/cawa";
+        Statement stat = null;
+        ResultSet res = null;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        conn = DriverManager.getConnection(host,"root","");    
+        %>
         
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-8">
                         <div class="box">
-                            <form action="UpdateWriter.jsp" method="post" enctype="multipart/form-data">
+                            <form action="EditWriter" method="get" enctype="multipart/form-data">
                                <%
                                 stat = conn.createStatement();
                                 String u = request.getParameter("u");
@@ -86,7 +86,7 @@
                                 %> 
        
                                 <h1 class="title is-4 has-text-centered"> Modify!</h1>
-                                 <input type="hidden" name="id" value="<%=res.getString("num") %>">
+                                 <input type="hidden" name="num" value="<%=res.getString("num") %>">
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
                                       <label class="label">Nom</label>

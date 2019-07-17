@@ -56,7 +56,7 @@
         <div class="hero-head has-background-black">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left ">
-                    <a href="admin.jsp" class="navbar-item has-text-white">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="navbar-item has-text-white">Bouquini</a>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item has-text-white">Users</a>

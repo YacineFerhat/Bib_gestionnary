@@ -49,8 +49,7 @@ public class AddBook extends HttpServlet {
         
         try{
            Class.forName("com.mysql.jdbc.Driver");
-           Connection c;
-           c= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
+           Connection c= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
            Statement st = c.createStatement();
             PreparedStatement pst1 = c.prepareStatement("select max(ISSN)+1 from livre");
             ResultSet rs = pst1.executeQuery();

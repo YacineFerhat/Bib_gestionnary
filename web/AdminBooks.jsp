@@ -48,10 +48,10 @@
 </head>
 <body>
     <section class="hero is-fullheight">
-         <div class="hero-head is-black">
+         <div class="hero-head ">
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
-                    <a href="admin.jsp" class="navbar-item">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item">Users</a>
@@ -195,7 +195,7 @@
                                         
                                     </p>
                                     <p class="control">
-                                        <input type="submit" value="Cancel" class="button is-danger">
+                                        <input type="reset" value="Cancel" class="button is-danger">
                                         
                                     </p>
                                 </div>
@@ -245,7 +245,7 @@
                                         <td><%=rs.getString("Resume")%></td>
                                         <td class="has-text-centered" style="min-width:150px">
                                             <div class="buttons are-small">
-                                                <a class="button is-danger" href="DeleteBook.jsp?id=<%=rs.getInt("ISSN") %>">delete</a>
+                                                <a class="button is-danger" href="DeleteBook?id=<%=rs.getInt("ISSN") %>">delete</a>
                                                 <a class="button is-warning" href='ModifyBook.jsp?u=<%= rs.getInt("ISSN")%>'>modify</a>
                                             </div>
                                         </td>

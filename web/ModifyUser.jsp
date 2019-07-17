@@ -61,41 +61,41 @@
         </div>
         <%
             
-    String host="jdbc:mysql://localhost:3306/cawa";
-    Statement stat = null;
-    ResultSet res = null;
-    Connection conn = null;
-    PreparedStatement stmt = null;
-    Class.forName("com.mysql.jdbc.Driver").newInstance();
-    conn = DriverManager.getConnection(host,"root","");    
-%>
+        String host="jdbc:mysql://localhost:3306/cawa";
+        Statement stat = null;
+        ResultSet res = null;
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        conn = DriverManager.getConnection(host,"root","");    
+        %>
         
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-8">
                         <div class="box">
-                            <form action="EditBook" method="get" enctype="multipart/form-data">
+                            <form action="EditUser" method="get" enctype="multipart/form-data">
                                <%
                                 stat = conn.createStatement();
                                 String u = request.getParameter("u");
-                                int num = Integer.parseInt(u);
-                                String data = "select * from livre where ISSN='"+ num +"'";
+                                int id = Integer.parseInt(u);
+                                String data = "select * from utilisateur where id='"+ id +"'";
                                 res = stat.executeQuery(data);
                                 while(res.next()){
                                 %> 
        
                                 <h1 class="title is-4 has-text-centered"> Modify!</h1>
-                                 <input type="hidden" name="id" value="<%=res.getString("ISSN") %>">
+                                 <input type="hidden" name="id" value="<%=res.getString("id") %>">
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
-                                      <label class="label">Title</label>
+                                      <label class="label">Nom</label>
                                   </div>
                                   <div class="field-body">
                                       <div class="field">
                                       <p class="control is-expanded has-icons-left">
-                                          <input class="input" type="text" placeholder="Apprendre à coder" name="BookTitle"
-                                                 value='<%=res.getString("Titre")%>'>
+                                          <input class="input" type="text" placeholder="Apprendre à coder" name="nom"
+                                                 value='<%=res.getString("nom")%>'>
                                           <span class="icon is-small is-left">
                                             <i class="fas fa-book"></i>
                                           </span>
@@ -106,13 +106,13 @@
                               <br>
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
-                                      <label class="label">Book's domain</label>
+                                      <label class="label">Prenom</label>
                                   </div>
                                   <div class="field-body">
                                       <div class="field">
                                       <p class="control is-expanded has-icons-left">
                                           <input class="input" type="text" placeholder="Coding" 
-                                            value='<%=res.getString("Domaine")%>' name="BookDomain">
+                                            value='<%=res.getString("prenom")%>' name="prenom">
                                           <span class="icon is-small is-left">
                                               <i class="fas fa-tags"></i>
                                           </span>
@@ -123,52 +123,16 @@
                               <br>
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
-                                      <label class="label">Book's Resume</label>
+                                      <label class="label">Date de Naissance</label>
                                   </div>
                                   <div class="field-body">
                                       <div class="field">
                                           <p class="control is-expanded has-icons-left has-icons-right">
-                                              <input value='<%=res.getString("Resume")%>' class="textarea" placeholder="e.g made for begginer, to learn how to code !" name="BookResume">                                                <span class="icon is-small is-left">
+                                              <input value='<%=res.getString("email")%>' class="input" type="email" name="email">                                                <span class="icon is-small is-left">
                                           </p>
                                       </div>    
                                   </div>
                               </div>
-                              <br>
-                              <div class="field is-horizontal">
-                                  <div class="field-label is-normal">
-                                      <label class="label">Nb Pages</label>
-                                  </div>
-                                  <div class="field-body">
-                                      <div class="field">
-                                          <p class="control is-expanded has-icons-left has-icons-right">
-                                              <input value='<%=res.getString("NbPage")%>' class="input " type="text" placeholder="520" name="BookPages">
-                                          </p>
-                                      </div>    
-                                  </div>
-                              </div>
-                              <br>
-
-                              <div class="field is-horizontal">
-                                  <div class="field-label is-normal">
-                                      <label class="label">Book's covert</label>
-                                  </div>
-                                  <div class="field-body">
-                                     <div class="file">
-                                          <label class="file-label">
-                                              <input class="file-input" type="file" name="BookCovert">
-                                              <span class="file-cta">
-                                                  <span class="file-icon">
-                                                      <i class="fas fa-upload"></i>
-                                                  </span>
-                                              <span class="file-label">
-                                                Choose a file
-                                              </span>
-                                            </span>
-                                          </label>
-                                        </div>
-                                  </div>
-                              </div>
-                              <br>
                                 <%
                                     }
                            
