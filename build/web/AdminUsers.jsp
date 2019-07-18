@@ -15,59 +15,16 @@
     <title>Users</title>
 
     <style>
-        .center , .center-column, .top, .right, .bottom, .left{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .center-column{
-            flex-direction: column;
-        }
-
-        .top{
-            align-items: flex-start;
-        }
-        .right{
-            justify-content: flex-end;
-        }
-        .bottom{
-            align-items: flex-end;
-        }
-        .left{
-            justify-content: flex-start;
-        }
-        .single-spaced, .single-spaced *{
-            line-height: 1;
-        }
+       
         .modal{
-            padding-top: 50px;
+            padding-top: 20px;
         }
        
     </style>
 </head>
 <body>
     <section class="hero is-fullheight">
-        <div class="hero-head is-black">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left">
-                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
-                    <p class="navbar-item has-text-dark">  
-                        <% String user =session.getAttribute("user").toString();
-                         out.print(" "+user); 
-                        %>
-                    </p>
-                </div>
-                <div class="column center">
-                    <a href="AdminUsers.jsp" class="navbar-item">Users</a>
-                    <a href="AdminBooks.jsp" class="navbar-item">Books</a>
-                    <a href="AdminWriters.jsp" class="navbar-item">Writers</a>
-                </div>
-                <div class="column right">
-                    <a href="index.jsp" class="navbar-item">Disconnect</a>
-                </div>
-            </div>
-        </div>
+        <%@ include file="/Header.jsp" %>
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
@@ -77,12 +34,12 @@
                                     <div class="field has-addons">
                                         <p class="control">
                                             <span class="select">
-                                            <select name="selection">
-                                                <option value="id">Number</option>
-                                                <option value="nom">Last Name</option>
-                                                <option value="prenom">First Name</option>
-                                                <option value="email">Email</option>                    
-                                            </select>
+                                                <select name="selection">
+                                                    <option value="id">Number</option>
+                                                    <option value="nom">Last Name</option>
+                                                    <option value="prenom">First Name</option>
+                                                    <option value="email">Email</option>                    
+                                                </select>
                                             </span>
                                         </p>
                                         <p class="control is-expanded">
@@ -99,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal" id="ModalToOpen">
+                <div class="modal has-text-centered" id="ModalToOpen">
                     <div class="modal-background"></div>
                         <div class="modal-card">
                             <header class="modal-card-head">
@@ -190,15 +147,31 @@
                                     </div>
                                 </div>
                                 <br>
-
+                                <div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Grade</label>
+                                    </div>
                                 
+                                    <div class="field-body">
+                                        <div class="field">
+                                            <p class="control is-expanded ">
+                                                <span class="select is-fullwidth">
+                                                    <select name="grade" >
+                                                        <option value="admin">Admin</option>
+                                                        <option value="user">User</option>
+                                                    </select>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
                                         <input type="submit" value="Submit" class="button is-primary">
                                         
                                     </p>
                                     <p class="control">
-                                        <input type="reset" value="Cancel" class="button is-danger">
+                                        <input type="reset" value="Reset" class="button is-danger">
                                         
                                     </p>
                                 </div>

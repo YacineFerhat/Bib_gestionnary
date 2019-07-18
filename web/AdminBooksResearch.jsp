@@ -20,54 +20,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Home Research</title>
-    
-    <style>
-        .center , .center-column, .top, .right, .bottom, .left{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .center-column{
-            flex-direction: column;
-        }
-
-        .top{
-            align-items: flex-start;
-        }
-        .right{
-            justify-content: flex-end;
-        }
-        .bottom{
-            align-items: flex-end;
-        }
-        .left{
-            justify-content: flex-start;
-        }
-        .single-spaced, .single-spaced *{
-            line-height: 1;
-        }
-    </style>
 </head>
 
 <body>
     
     <section class="hero is-fullheight">
-        <div class="hero-head has-background-black">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left ">
-                    <a href="HomeAdmin.jsp" class="navbar-item has-text-white">Bouquini</a>
-                </div>
-                <div class="column center">
-                    <a href="AdminUsers.jsp" class="navbar-item has-text-white">Users</a>
-                    <a href="AdminBooks.jsp" class="navbar-item has-text-white">Books</a>
-                    <a href="AdminWriters.jsp" class="navbar-item has-text-white">Writers</a>
-                </div>
-                <div class="column right">
-                    <a href="index.jsp" class="navbar-item has-text-white">Disconnect</a>
-                </div>
-            </div>
-        </div>
+        <%@ include file="/HeaderResearch.jsp" %>
               <div class="buttons is-right">
                   <a href="AdminBooks.jsp" style="margin-top:20px;" class="button is-black"><span class="icon">
                 <i class="fas fa-arrow-circle-left"></i></span><span>Go back</span></a>
@@ -101,9 +59,7 @@
                                            </ul>
                                          </div>
                                        </div>
-                                       <div class="media-right">
-                                         <button class="delete" id="delete"></button>
-                                       </div>
+                                   
                                      </article>
                                     </div>
     <%

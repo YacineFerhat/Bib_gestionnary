@@ -38,14 +38,7 @@ public class Index extends HttpServlet {
             HttpSession ss = request.getSession();
             ss.setAttribute("user",email);
             this.getServletContext().getRequestDispatcher("/HomeAdmin.jsp").forward(request,response);
-            this.getServletContext().getRequestDispatcher("/AdminBooks.jsp").forward(request,response);
-            this.getServletContext().getRequestDispatcher("/AdminUsers.jsp").forward(request,response);
-            this.getServletContext().getRequestDispatcher("/AdminWriters.jsp").forward(request,response);
-
-            //RequestDispatcher rs = request.getRequestDispatcher("/HomeAdmin.jsp");
-            //rs.forward(request, response);
-            
-
+            this.getServletContext().getRequestDispatcher("/Header.jsp").forward(request,response);            
         }
         else if(Validate.checkUser(email, pass,"0")){
             

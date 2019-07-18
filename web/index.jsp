@@ -66,14 +66,7 @@
                                     </span>
                                 </p>
                             </div>
-                            <div class="field">
-                                <div class="control">
-                                    <label class="checkbox">
-                                    <input type="checkbox">
-                                        Remmember me
-                                    </label>
-                                </div>
-                            </div>
+                           
                             
                             <div class="field ">
                                 <div class="buttons is-right">
@@ -129,7 +122,7 @@
         <div class="modal-background"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
-                    <p class="modal-card-title">Register !</p>
+                    <p class="modal-card-title has-text-centered">Register !</p>
                     <button id="CloseModal" class="delete" aria-label="close"></button>
                 </header>
                 <section class="modal-card-body">
@@ -179,9 +172,7 @@
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                                 </span>
-                                                <span class="icon is-small is-right">
-                                                <i class="fas fa-check"></i>
-                                                </span>
+                                             
                                             </p>
                                         </div>    
                                     </div>
@@ -197,11 +188,9 @@
                                             <p class="control is-expanded has-icons-left has-icons-right">
                                                 <input class="input is-success" type="password" placeholder="****" name="UserPassWord">
                                                 <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
+                                                    <i class="fas fa-lock"></i>
                                                 </span>
-                                                <span class="icon is-small is-right">
-                                                <i class="fas fa-check"></i>
-                                                </span>
+                                                
                                             </p>
                                         </div>    
                                     </div>
@@ -217,11 +206,9 @@
                                             <p class="control is-expanded has-icons-left has-icons-right">
                                                 <input class="input is-success" type="password" placeholder="****" name="UserPassWordConfirm">
                                                 <span class="icon is-small is-left">
-                                                <i class="fas fa-envelope"></i>
+                                                    <i class="fas fa-lock"></i>
                                                 </span>
-                                                <span class="icon is-small is-right">
-                                                <i class="fas fa-check"></i>
-                                                </span>
+                                                
                                             </p>
                                         </div>    
                                     </div>

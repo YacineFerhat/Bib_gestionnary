@@ -14,60 +14,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <title>Manage the books</title>
-
-    <style>
-        .center , .center-column, .top, .right, .bottom, .left{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .center-column{
-            flex-direction: column;
-        }
-
-        .top{
-            align-items: flex-start;
-        }
-        .right{
-            justify-content: flex-end;
-        }
-        .bottom{
-            align-items: flex-end;
-        }
-        .left{
-            justify-content: flex-start;
-        }
-        .single-spaced, .single-spaced *{
-            line-height: 1;
-        }
-        .modal{
-            padding-top: 40px;
-        }
-    </style>
 </head>
 <body>
     <section class="hero is-fullheight">
-         <div class="hero-head ">
-            <div class="columns is-mobile is-marginless heading has-text-weight-bold">
-                <div class="column left">
-                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
-                    <p class="navbar-item has-text-dark">  
-                        <% String user =session.getAttribute("user").toString();
-                         out.print(" "+user); 
-                        %>
-                    </p>
-                </div>
-                <div class="column center">
-                    <a href="AdminUsers.jsp" class="navbar-item">Users</a>
-                    <a href="AdminBooks.jsp" class="navbar-item">Books</a>
-                    <a href="AdminWriters.jsp" class="navbar-item">Writers</a>
-                </div>
-                <div class="column right">
-                    <a href="index.jsp" class="navbar-item">Disconnect</a>
-                </div>
-            </div>
-        </div>
+        <%@ include file="/Header.jsp" %>
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
@@ -101,7 +51,7 @@
                     </div>
                 </div>
                 
-                <div class="modal" id="ModalToOpen">
+                <div class="modal has-text-centered" id="ModalToOpen" style="padding-top: 20px;">
                     <div class="modal-background"></div>
                         <div class="modal-card">
                             <header class="modal-card-head">

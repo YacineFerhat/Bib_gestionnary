@@ -27,7 +27,13 @@ public class AddUser extends HttpServlet {
         String mail= r.getParameter("UserEmail");
         String password= r.getParameter("UserPassWord");
         String confirmPassword= r.getParameter("UserPassWordConfirm");
+        String grade = r.getParameter("grade");
         PrintWriter p = s.getWriter();
+        
+        int grd;
+        if (grade.equals("admin")) grd =1;
+        else grd =0;
+        
         //id(AI),nom,prenom,email,passWord,grade(0/1)
         if(password.equals(confirmPassword)){
             
@@ -43,7 +49,7 @@ public class AddUser extends HttpServlet {
             {
                 user_id = rs.getString(1);
             }
-           st.executeUpdate("insert into utilisateur values('"+user_id+"','"+FamilyName+"','"+FirstName+"','"+mail+"','"+password+"','0');");
+           st.executeUpdate("insert into utilisateur values('"+user_id+"','"+FamilyName+"','"+FirstName+"','"+mail+"','"+password+"','"+grd +"');");
            RequestDispatcher rd = r.getRequestDispatcher("AdminUsers.jsp");
            rd.include(r,s);
         }catch (ClassNotFoundException | SQLException ex) {

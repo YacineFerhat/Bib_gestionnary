@@ -25,10 +25,6 @@
         <servlet-class>AddUser</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Amelia</servlet-name>
-        <servlet-class>Amelia.Amelia</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>DeleteWriter</servlet-name>
         <servlet-class>DeleteWriter</servlet-class>
     </servlet>
@@ -77,10 +73,6 @@
         <url-pattern>/AddUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Amelia</servlet-name>
-        <url-pattern>/Amelia</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>DeleteWriter</servlet-name>
         <url-pattern>/DeleteWriter</url-pattern>
     </servlet-mapping>
@@ -109,8 +101,8 @@
             30
         </session-timeout>
     </session-config>
-    <welcome-file-list>
+    <welcome-file-list>     
         <welcome-file>index.jsp</welcome-file>
-        <welcome-file>Register.jsp</welcome-file>
+        <welcome-file>HomeUser.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
