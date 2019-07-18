@@ -50,6 +50,11 @@
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
                     <a href="HomeUser.jsp" class="navbar-item has-text-white">Bouquini</a>
+                    <p class="navbar-item has-text-white">Bienvenue  
+                        <% String user =session.getAttribute("user").toString();
+                         out.print(" "+user); 
+                        %>
+                    </p>
                 </div>
                 <div class="column right">
                     <a href="index.jsp" class="navbar-item has-text-white">Disconnect</a>
@@ -104,7 +109,7 @@
                                     while(rs.next()){
                                         
                                   %>
-                                    <div class="box">
+                                    <div class="box" id="box">
                                         <article class="media" id="MediaToClose">
                                        <figure class="media-left">
                                          <p class="image is-128x128">
@@ -122,10 +127,15 @@
                                          </div>
                                        </div>
                                        <div class="media-right">
-                                         <button class="delete" id="delete"></button>
+                                           <button class="delete" id="delete">        
+                                           </button>
+                                            
                                        </div>
+                                           
                                      </article>
+                               
                                     </div>
+                                                       
                                   <%
                                     }
                                 }
@@ -135,11 +145,28 @@
 
                                   %>
                 </div>
+                
             </div>    
         </div>
     </section>
+    
     <script src="js/main.js"></script>
+   <!-- <script>
+        document.getElementById("delete").onclick = function() { 
+            
+            document.getElementById("box").style.display = "none"; 
+        } 
+    </script>
+   -->
+   <script>
+        const z = document.getElementById('delete');
+        const y = document.getElementById('box');
 
+        z.onclick = () => {
+            y.style.display = 'none';
+        };
+   </script>
+    
 <body>
     
 </body>

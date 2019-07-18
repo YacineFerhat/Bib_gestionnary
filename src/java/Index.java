@@ -34,13 +34,29 @@ public class Index extends HttpServlet {
         String pass = request.getParameter("passWord");
         
         if(Validate.checkUser(email, pass,"1"))
-        {
-            RequestDispatcher rs = request.getRequestDispatcher("/HomeAdmin.jsp");
-            rs.forward(request, response);
+        {   
+            HttpSession ss = request.getSession();
+            ss.setAttribute("user",email);
+            this.getServletContext().getRequestDispatcher("/HomeAdmin.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/AdminBooks.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/AdminUsers.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/AdminWriters.jsp").forward(request,response);
+
+            //RequestDispatcher rs = request.getRequestDispatcher("/HomeAdmin.jsp");
+            //rs.forward(request, response);
+            
+
         }
         else if(Validate.checkUser(email, pass,"0")){
-            RequestDispatcher rs = request.getRequestDispatcher("/HomeUser.jsp");
-            rs.forward(request, response);
+            
+            HttpSession ss = request.getSession();
+            ss.setAttribute("user",email);
+            this.getServletContext().getRequestDispatcher("/HomeUser.jsp").forward(request,response);
+            this.getServletContext().getRequestDispatcher("/HomeUserResearch.jsp").forward(request,response);
+
+
+            //RequestDispatcher rs = request.getRequestDispatcher("/HomeUser.jsp");
+            //rs.forward(request, response);
         }
         else{
             RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");

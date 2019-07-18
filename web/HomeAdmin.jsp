@@ -36,15 +36,21 @@
         }
         .single-spaced, .single-spaced *{
             line-height: 1;
-        }    
+        }
+       
     </style>
 </head>
 <body>
     <section class="hero is-fullheight is-black">
-         <div class="hero-head has-background-white">
-            <div class="columns has-text-black is-mobile is-marginless heading has-text-weight-bold">
+         <div class="hero-head  has-background-white ">
+            <div class="columns  is-mobile is-marginless has-text-grey-light	 heading has-text-weight-bold">
                 <div class="column left">
-                    <a href="HomeAdmin.jsp" class="navbar-item">Bouquini</a>
+                    <a href="HomeAdmin.jsp" class="has-hover-background-white	 navbar-item">Bouquini</a>
+                    <p class="navbar-item has-text-dark">  
+                        <% String user =session.getAttribute("user").toString();
+                         out.print(" "+user); 
+                        %>
+                    </p>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item">Users</a>
@@ -61,63 +67,61 @@
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-8">
-                         
-                        <h1 class="title is-4 has-text-centered" style="margin-top :80px;">Home</h1>
+                        <h1 class="title is-4 has-text-centered" >Home</h1>
                         <h2 class="subtitle is-6 has-text-centered">As an admin, you can manage the whole system</h2>
-            
                     </div>
                 </div>
-            </div>
-           
-            <form method="Get" action="Admin">
-                <div class="container">    
-            <div class="columns">
-                <div class="column has-text-centered">
-                    <div class="box has-background-white">
-                        <span class="icon">
-                            <i class="fas fa-users fa-2x">
-                            </i>
-                        </span>
-                        <p class="title is-4 has-text-dark"> Users</p>
-                        <p>
-                            Here, u can access to the users of the system, you will be able to consult their informations, maybe modify some and delete some.
-                        </p>
-                        <br>
-                        <a href="AdminUsers.jsp" class="button">Move on</a>
+               
+                <form method="Get" action="Admin">
+                    <div class="container" style="margin-top :80px;">    
+                        <div class="columns">
+                            <div class="column has-text-centered">
+                                <div class="box has-background-white">
+                                    <span class="icon">
+                                        <i class="fas fa-users fa-2x">
+                                        </i>
+                                    </span>
+                                    <p class="title is-4 has-text-dark"> Users</p>
+                                    <p>
+                                        Here, u can access to the users of the system, you will be able to consult their informations, maybe modify some and delete some.
+                                    </p>
+                                    <br>
+                                    <a href="AdminUsers.jsp" class="button">Move on</a>
+                                </div>
+                            </div>
+                            <div class="column has-text-centered">
+                                <div class="box">
+                                    <span class="icon">
+                                        <i class="fas fa-book fa-2x"></i>
+                                    
+                                    </span>
+                                    <h1 class="title is-4 has-text-dark"> Books</h1>
+                                    <p>
+                                        Here, u can access to the books stored in the system, you will be able to consult their informations, add, delete and modify.
+                                    </p>
+                                    <br>
+                                    <a href="AdminBooks.jsp" class="button">Move on</a>
+                                </div>
+                            </div>
+                            <div class="column has-text-centered">
+                                <div class="box">
+                                    <span class="icon">
+                                        <i class="fas fa-feather-alt fa-2x"></i>                        
+                                    </span>
+                                    <h1 class="title is-4 has-text-dark"> Writers</h1>
+                                    <p>
+                                        Here, you can access to the writers, you will be able to consult their informations, add writers, modify or delete some.
+                                    </p>
+                                    <br>
+                                    <a href="AdminWriters.jsp" class="button">Move on</a>
+                                </div>        
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="column has-text-centered">
-                    <div class="box">
-                        <span class="icon">
-                            <i class="fas fa-book fa-2x"></i>
-                        
-                        </span>
-                        <h1 class="title is-4 has-text-dark"> Books</h1>
-                        <p>
-                            Here, u can access to the books stored in the system, you will be able to consult their informations, add, delete and modify.
-                        </p>
-                        <br>
-                        <a href="AdminBooks.jsp" class="button">Move on</a>
-                    </div>
-                </div>
-                <div class="column has-text-centered">
-                    <div class="box">
-                        <span class="icon">
-                            <i class="fas fa-feather-alt fa-2x"></i>                        
-                        </span>
-                        <h1 class="title is-4 has-text-dark"> Writers</h1>
-                        <p>
-                            Here, you can access to the writers, you will be able to consult their informations, add writers, modify or delete some.
-                        </p>
-                        <br>
-                        <a href="AdminWriters.jsp" class="button">Move on</a>
-                    </div>        
-                </div>
-            </div>
-                </div>
-            </form>
-        </div>
+                </form>
 
+            </div>
+        </div>
     </section>
 </body>
 </html>

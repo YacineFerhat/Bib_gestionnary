@@ -58,6 +58,11 @@
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left">
                     <a href="HomeUser.jsp" class="navbar-item has-text-white">Bouquini</a>
+                    <p class="navbar-item has-text-white">  
+                        <% String user =session.getAttribute("user").toString();
+                         out.print(user); 
+                        %>
+                    </p>
                 </div>
                 <div class="column right">
                     <a href="index.jsp" class="navbar-item has-text-white">Disconnect</a>
@@ -101,9 +106,7 @@
                                            </ul>
                                          </div>
                                        </div>
-                                       <div class="media-right">
-                                         <button class="delete" id="delete"></button>
-                                       </div>
+                                      
                                      </article>
                                     </div>
 
