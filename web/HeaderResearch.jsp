@@ -42,6 +42,11 @@
             <div class="columns is-mobile is-marginless heading has-text-weight-bold">
                 <div class="column left ">
                     <a href="HomeAdmin.jsp" class="navbar-item has-text-white">Bouquini</a>
+                     <p class="navbar-item has-text-dark">  
+                       <% String user =session.getAttribute("user").toString();
+                        out.print(" "+user); 
+                       %>
+                   </p>
                 </div>
                 <div class="column center">
                     <a href="AdminUsers.jsp" class="navbar-item has-text-white">Users</a>

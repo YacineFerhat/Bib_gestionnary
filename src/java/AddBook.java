@@ -41,7 +41,6 @@ public class AddBook extends HttpServlet {
         String BookDomain= request.getParameter("BookDomain");
         String BookResume= request.getParameter("BookResume");
         String BookPages= request.getParameter("BookPages");
-        Part BookCovert = request.getPart("BookCovert");
 
         
         PrintWriter p = response.getWriter();
@@ -58,8 +57,7 @@ public class AddBook extends HttpServlet {
             {
                 book_id = rs.getString(1);
             }
-           InputStream input = BookCovert.getInputStream();
-           st.executeUpdate("insert into livre values('"+book_id+"','"+BookTitle+"','"+BookResume+"','"+BookPages+"','"+BookDomain+"','"+ input +"');");
+           st.executeUpdate("insert into livre values('"+book_id+"','"+BookTitle+"','"+BookResume+"','"+BookPages+"','"+BookDomain+"');");
            //st.executeUpdate("insert into livre values(?,?,?,?,?,?)");
            /*
            
