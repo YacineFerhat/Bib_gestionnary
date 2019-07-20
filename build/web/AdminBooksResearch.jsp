@@ -54,6 +54,7 @@
                                            <ul>
                                                <li><strong>ISSN : </strong><%=rs.getString("ISSN")%></li>
                                                <li><strong>Titre : </strong><%=rs.getString("Titre")%></li>
+                                               <li><strong>Auteur : </strong><%=rs.getString("Auteur")%></li>
                                                <li><strong>Domaine : </strong><%=rs.getString("Domaine")%></li>
                                                <li><strong>NbPages : </strong><%=rs.getString("NbPage")%></li>
                                            </ul>

@@ -35,6 +35,8 @@ public class RegisterUser extends HttpServlet {
         String confirmPassword= r.getParameter("UserPassWordConfirm");
         PrintWriter p = s.getWriter();
         //id(AI),nom,prenom,email,passWord,grade(0/1)
+      
+     
         if(password.equals(confirmPassword)){
             
         try{
@@ -50,7 +52,6 @@ public class RegisterUser extends HttpServlet {
                 user_id = rs.getString(1);
             }
            st.executeUpdate("insert into utilisateur values('"+user_id+"','"+FamilyName+"','"+FirstName+"','"+mail+"','"+password+"','0');");
-           System.out.println("Succes");
            RequestDispatcher rd = r.getRequestDispatcher("HomeUser.jsp");
            rd.include(r,s);
         }catch (ClassNotFoundException | SQLException ex) {
@@ -59,10 +60,13 @@ public class RegisterUser extends HttpServlet {
         
         }
         else{
-            RequestDispatcher rd = r.getRequestDispatcher("Register.jsp");
+            RequestDispatcher rd = r.getRequestDispatcher("index.jsp");
             rd.include(r,s);
             PrintWriter print = s.getWriter();
-            print.print("<script>alert('Vos mot de passes sont différents')</script>");
+            print.print("<script>alert('Vos mots de passes sont differents')</script>");
         }
+                   
+       
+      
     }
 }

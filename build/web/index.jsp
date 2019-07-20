@@ -43,7 +43,7 @@
                                 </h1>
                                 <br/>
                             </div>
-                            <form method="Post" action="Index">
+                            <form method="Post" action="Index" >
                             <div class="field">
                                 <label class="label has-text-left">Email</label>
                                 <div class="control has-icons-left has-icons-right">
@@ -88,7 +88,7 @@
                         <h1 class="title is-3 has-text-centered">
                             Bouquini! <i class="fas fa-book-reader"></i>
                         </h1>
-                        <p class="has-text-weight-semibold	">
+                        <p class="has-text-weight-semibold">
                             
                             Bouquini is a full solution adapted to libraries allowing them to fully automatise the 
                             management of the librarie, it contains :
@@ -127,15 +127,15 @@
                 </header>
                 <section class="modal-card-body">
                   <!-- Content ... -->
-                  <form action="RegisterUser" method="get">
+                  <form action="RegisterUser" method="get" id="commentForm">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Family Name</label>
+                                        <label class="label">Family Name*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Family Name" name="UserFamilyName">
+                                            <input class="input" id="name" type="text" placeholder="Family Name" name="UserFamilyName" required>
                                             <span class="icon is-small is-left">
                                             <i class="fas fa-user"></i>
                                             </span>
@@ -146,12 +146,12 @@
                                 <br>
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">First Name</label>
+                                        <label class="label">First Name*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="First Name" name="UserFirstName">
+                                            <input class="input" id="prenom" type="text" placeholder="First Name" name="UserFirstName" required>
                                             <span class="icon is-small is-left">
                                             <i class="fas fa-user"></i>
                                             </span>
@@ -163,12 +163,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Email</label>
+                                        <label class="label">Email*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail">
+                                                <input class="input is-success" id="email" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail" required>
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-envelope"></i>
                                                 </span>
@@ -181,12 +181,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">PassWord</label>
+                                        <label class="label">PassWord*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWord">
+                                                <input class="input is-success" id="pass" type="password" placeholder="****" name="UserPassWord" required>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-lock"></i>
                                                 </span>
@@ -199,12 +199,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Confirm PassWord</label>
+                                        <label class="label">Confirm PassWord*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input is-success" type="password" placeholder="****" name="UserPassWordConfirm">
+                                                <input class="input is-success" id="passC" type="password" placeholder="****" name="UserPassWordConfirm" required>
                                                 <span class="icon is-small is-left">
                                                     <i class="fas fa-lock"></i>
                                                 </span>
@@ -216,7 +216,7 @@
                                 <br>
                                 <div class="field is-grouped is-grouped-centered">
                                     <p class="control">
-                                        <input type="submit" value="Submit" class="button is-primary">
+                                        <input type="submit" name="submit" value="Submit" class="button is-primary">
                                     </p>
                                     <p class="control">
                                         <input type="reset" value="Reset" class="button is-danger">
@@ -226,6 +226,8 @@
                 </section>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script>  
+    <script src="js/check.js"></script>
+   
   </body>
 </html>

@@ -38,7 +38,9 @@
                                                     <option value="id">Number</option>
                                                     <option value="nom">Last Name</option>
                                                     <option value="prenom">First Name</option>
-                                                    <option value="email">Email</option>                    
+                                                    <option value="email">Email</option>    
+                                                    <option value="grade">Grade</option>
+
                                                 </select>
                                             </span>
                                         </p>
@@ -68,12 +70,12 @@
                               <form action="AddUser" method="get">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">User's family name</label>
+                                        <label class="label">User's family name*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Ferhat" name="UserFamilyName">
+                                            <input class="input" type="text" placeholder="Ferhat" name="UserFamilyName" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-user"></i>
                                             </span>
@@ -84,12 +86,12 @@
                                 <br>
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">User's first name</label>
+                                        <label class="label">User's first name*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Yacine" name="UserFirstName">
+                                            <input class="input" type="text" placeholder="Yacine" name="UserFirstName" required>
                                             <span class="icon is-small is-left">
                                                 <i class="fas fa-user"></i>
                                             </span>
@@ -101,12 +103,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">User's email</label>
+                                        <label class="label">User's email*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail">                                                <span class="icon is-small is-left">
+                                                <input class="input" type="email" placeholder="yacine.frhat@gmail.com" name="UserEmail" required>                                                <span class="icon is-small is-left">
                                                     <i class="fas fa-envelope"></i>
                                                 </span>
                                             </p>
@@ -117,12 +119,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">User's password</label>
+                                        <label class="label">User's password*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input" type="password" placeholder="****" name="UserPassWord">
+                                                <input class="input" type="password" placeholder="****" name="UserPassWord" required>
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-lock"></i>
                                                 </span>
@@ -133,12 +135,12 @@
                                 <br>
                                  <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Confirm password</label>
+                                        <label class="label">Confirm password*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input" type="password" placeholder="****" name="UserPassWordConfirm">
+                                                <input class="input" type="password" placeholder="****" name="UserPassWordConfirm" required>
                                                 <span class="icon is-small is-left">
                                                 <i class="fas fa-lock"></i>
                                                 </span>
@@ -191,6 +193,7 @@
                                     <th><abbr title="Last Name">Last Name</abbr></th>  
                                     <th><abbr title="First Name">First Name</abbr></th>
                                     <th><abbr title="Email">Email address</abbr></th>
+                                    <th><abbr title="Grade">Grade</abbr></th>
                                     <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </thead>
@@ -200,6 +203,7 @@
                                     <th><abbr title="Last Name">Last Name</abbr></th>  
                                     <th><abbr title="First Name">First Name</abbr></th>
                                     <th><abbr title="Email address">Email address</abbr></th>
+                                    <th><abbr title="Grade">Grade</abbr></th>
                                     <th><abbr title="Actions"><p class="has-text-centered">Actions</p></abbr></th>
                                 </tr>
                             </tfoot>
@@ -208,7 +212,7 @@
                                 try{
                                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
-                                    String Query = "Select id,nom,prenom,email from utilisateur";
+                                    String Query = "Select id,nom,prenom,email,grade from utilisateur";
                                     Statement stm=conn.createStatement();
                                     ResultSet rs = stm.executeQuery(Query);
                                     while(rs.next()){
@@ -217,6 +221,13 @@
                                         <td><%=rs.getString("nom")%></td>  
                                         <td><%=rs.getString("prenom")%></td>
                                         <td><%=rs.getString("email")%></td>
+                                        <td><%                         
+                                            if(rs.getString("grade").equals("1"))
+                                                out.print("Admin");
+                                            else 
+                                                out.print("Simple utilisateur");
+                                        %></td>
+
                                         <td class="has-text-centered" >
                                             <div class="buttons is-centered are-small">
                                                 <a class="button is-danger" href="DeleteUser?id=<%=rs.getInt("id") %>">delete</a>

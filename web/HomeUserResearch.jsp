@@ -100,6 +100,7 @@
                                          <div class="content">                                          
                                            <ul>
                                                <li><strong>Titre : </strong><%=rs.getString("Titre")%></li>
+                                               <li><strong>Ecrit par : </strong><%=rs.getString("Auteur")%></li>
                                                <li><strong>Domaine : </strong><%=rs.getString("Domaine")%></li>
                                                <li><strong>Nb Pages : </strong><%=rs.getInt("NbPage")%></li>
                                                <li><strong>Resumé : </strong><%=rs.getString("Resume")%></li>

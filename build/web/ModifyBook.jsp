@@ -106,6 +106,23 @@
                               <br>
                               <div class="field is-horizontal">
                                   <div class="field-label is-normal">
+                                      <label class="label">Book's writer</label>
+                                  </div>
+                                  <div class="field-body">
+                                      <div class="field">
+                                      <p class="control is-expanded has-icons-left">
+                                          <input class="input" type="text" placeholder="Coding" 
+                                            value='<%=res.getString("Auteur")%>' name="BookWriter">
+                                          <span class="icon is-small is-left">
+                                                <i class="fas fa-feather-alt"></i>
+                                          </span>
+                                      </p>
+                                      </div>
+                                  </div>
+                              </div>
+                              <br>
+                              <div class="field is-horizontal">
+                                  <div class="field-label is-normal">
                                       <label class="label">Book's domain</label>
                                   </div>
                                   <div class="field-body">

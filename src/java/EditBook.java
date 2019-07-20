@@ -29,7 +29,10 @@ public class EditBook extends HttpServlet {
         String BookDomain=request.getParameter("BookDomain");
         String BookResume=request.getParameter("BookResume");
         String BookPages=request.getParameter("BookPages");
-        String BookCovert=request.getParameter("BookPages");
+        String BookWriter=request.getParameter("BookWriter");
+
+        
+        
 
         PrintWriter p= response.getWriter();
         
@@ -41,13 +44,15 @@ public class EditBook extends HttpServlet {
                 Connection c= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
                 Statement st = c.createStatement();
                 //p.print("<p>Working</p>");
-                String sql="Update livre set Titre=?,Domaine=?,Resume=? ,NbPage=? where ISSN="+id;
+                String sql="Update livre set Titre=?,Domaine=?,Resume=? ,NbPage=?,Auteur=? where ISSN="+id;
                 //p.print("<p>Still working " + sql +"</p>");
                 PreparedStatement ps = c.prepareStatement(sql);
                 ps.setString(1,BookTitle);
                 ps.setString(2, BookDomain);
                 ps.setString(3, BookResume);
                 ps.setString(4, BookPages);
+                ps.setString(5, BookWriter);
+
                 //ps.setString(5, BookCovert);
 
                 //p.print("<p>Still working " + ps +"</p>");

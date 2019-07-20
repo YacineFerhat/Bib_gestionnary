@@ -28,12 +28,16 @@ public class Index extends HttpServlet {
       protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
+        PrintWriter print = response.getWriter();
+
+        RequestDispatcher RequestDispatcherIndex = request.getRequestDispatcher("/index.jsp");
+
         
         String email = request.getParameter("email");
         String pass = request.getParameter("passWord");
         
-        if(Validate.checkUser(email, pass,"1"))
+        if(!pass.isEmpty() && !email.isEmpty()){
+           if(Validate.checkUser(email, pass,"1"))
         {   
             HttpSession ss = request.getSession();
             ss.setAttribute("user",email);
@@ -48,18 +52,32 @@ public class Index extends HttpServlet {
             ss.setAttribute("user",email);
             this.getServletContext().getRequestDispatcher("/HomeUser.jsp").forward(request,response);
             this.getServletContext().getRequestDispatcher("/HomeUserResearch.jsp").forward(request,response);
-
-
-            //RequestDispatcher rs = request.getRequestDispatcher("/HomeUser.jsp");
-            //rs.forward(request, response);
         }
+        
         else{
-            RequestDispatcher rd = request.getRequestDispatcher("/index.jsp");
-            rd.include(request,response);
-            PrintWriter print = response.getWriter();
-            print.print("<html><body><script>alert('Problème d'authentification !')</script></body></html>");
+            RequestDispatcherIndex.include(request,response);
+            print.print("<html><body><script>alert('Les Id sont incorrects')</script></body></html>");
+
+        } 
+        }
+        else if(pass.isEmpty() && email.isEmpty()) {
+            
+            RequestDispatcherIndex.include(request,response);
+            print.print("<html><body><script>alert('Les champs Mot de passe et mail ne peuvent pas être vide!')</script></body></html>");
 
         }
+        else if(email.isEmpty()) {
+            RequestDispatcherIndex.include(request,response);
+            print.print("<html><body><script>alert('Le champ Email ne peut pas être vide!')</script></body></html>");
+ 
+        }
+        else {
+            RequestDispatcherIndex.include(request,response);
+            print.print("<html><body><script>alert('Le champ Password ne peut pas être vide!')</script></body></html>");
+ 
+        }
+        
+        
     }  
   
 }

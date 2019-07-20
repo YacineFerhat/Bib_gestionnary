@@ -42,6 +42,7 @@
                             String Query = "Select * from utilisateur where "+ type +" ='"+ id +"' ";
                             Statement stm=conn.createStatement();
                             ResultSet rs = stm.executeQuery(Query);
+                                
                             while(rs.next()){
                           %>
                           <div class="box">
@@ -65,6 +66,7 @@
     <%
 
             }
+                            
 }
 catch(Exception ex){
     out.println("erreur");

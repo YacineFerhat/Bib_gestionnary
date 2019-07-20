@@ -29,6 +29,7 @@
                                         <span class="select">
                                             <select name="selection">
                                             <option value="ISSN">Code</option>
+                                            <option value="Auteur">Auteur</option>
                                             <option value="Titre">Title</option>
                                             <option value="Domaine">Domain</option>   
                                             <option value="NbPage">NbPages</option>                                              
@@ -60,17 +61,32 @@
                             </header>
                             <section class="modal-card-body">
                               <!-- Content ... -->
-                              <form action="AddBook" method="post" enctype="multipart/form-data">
+                              <form action="AddBook" method="get" enctype="multipart/form-data">
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Title</label>
+                                        <label class="label">Title*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Apprendre à coder" name="BookTitle">
+                                            <input class="input" type="text" placeholder="Apprendre à coder" name="BookTitle" required>
                                             <span class="icon is-small is-left">
                                               <i class="fas fa-book"></i>
+                                            </span>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><div class="field is-horizontal">
+                                    <div class="field-label is-normal">
+                                        <label class="label">Book's Writer*</label>
+                                    </div>
+                                    <div class="field-body">
+                                        <div class="field">
+                                        <p class="control is-expanded has-icons-left">
+                                            <input class="input" type="text" placeholder="Apprendre à coder" name="BookWriter" required>
+                                            <span class="icon is-small is-left">
+                                                <i class="fas fa-feather-alt"></i>
                                             </span>
                                         </p>
                                         </div>
@@ -79,13 +95,13 @@
                                 <br>
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Book's domain</label>
+                                        <label class="label">Book's domain*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                         <p class="control is-expanded has-icons-left">
-                                            <input class="input" type="text" placeholder="Coding" name="BookDomain">
-                                            <span class="icon is-small is-left">
+                                            <input class="input" type="text" placeholder="Coding" name="BookDomain" required>
+                                            <span class="icon is-small is-left"> 
                                                 <i class="fas fa-tags"></i>
                                             </span>
                                         </p>
@@ -96,12 +112,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Book's Resume</label>
+                                        <label class="label">Book's Resume*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="textarea" placeholder="e.g made for begginer, to learn how to code !" name="BookResume">                                                <span class="icon is-small is-left">
+                                                <input class="textarea" placeholder="e.g made for begginer, to learn how to code !" name="BookResume" required>                                                <span class="icon is-small is-left">
                                             </p>
                                         </div>    
                                     </div>
@@ -110,12 +126,12 @@
 
                                 <div class="field is-horizontal">
                                     <div class="field-label is-normal">
-                                        <label class="label">Nb Pages</label>
+                                        <label class="label">Nb Pages*</label>
                                     </div>
                                     <div class="field-body">
                                         <div class="field">
                                             <p class="control is-expanded has-icons-left has-icons-right">
-                                                <input class="input " type="text" placeholder="520" name="BookPages">
+                                                <input class="input " type="text" placeholder="520" name="BookPages" required>
                                             </p>
                                         </div>    
                                     </div>
@@ -131,7 +147,7 @@
                                         
                                     </p>
                                     <p class="control">
-                                        <input type="reset" value="Cancel" class="button is-danger">
+                                        <input type="reset" value="Reset" class="button is-danger">
                                         
                                     </p>
                                 </div>
@@ -147,6 +163,7 @@
                                 <tr>
                                     <th><abbr title="Code">Code</abbr></th>  
                                     <th><abbr title="Name">Name</abbr></th>
+                                    <th><abbr title="Auteur">Auteur</abbr></th>
                                     <th><abbr title="Domain">Domain</abbr></th>
                                     <th><abbr title="Nbr pages">Nb pages</abbr></th>
                                     <th><abbr title="Resume">Resume</abbr></th>
@@ -158,6 +175,7 @@
                                 <tr>
                                     <th><abbr title="Code">Code</abbr></th>  
                                     <th><abbr title="Name">Name</abbr></th>
+                                    <th><abbr title="Auteur">Auteur</abbr></th>
                                     <th><abbr title="Domain">Domain</abbr></th>
                                     <th><abbr title="Nbr pages">Nb pages</abbr></th>
                                     <th><abbr title="Resume">Resume</abbr></th>
@@ -169,13 +187,14 @@
                                 try{
                                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
-                                    String Query = "Select ISSN,Titre,Resume,NbPage,Domaine from livre";
+                                    String Query = "Select ISSN,Titre,Auteur,Resume,NbPage,Domaine from livre";
                                     Statement stm=conn.createStatement();
                                     ResultSet rs = stm.executeQuery(Query);
                                     while(rs.next()){
                                   %><tr>
                                         <td><%=rs.getInt("ISSN")%></td>  
                                         <td><%=rs.getString("Titre")%></td>
+                                        <td><%=rs.getString("Auteur")%></td>
                                         <td><%=rs.getString("Domaine")%></td>
                                         <td><%=rs.getInt("NbPage")%></td>
                                         <td><%=rs.getString("Resume")%></td>

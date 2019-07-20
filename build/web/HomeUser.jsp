@@ -101,13 +101,13 @@
                                 try{
                                     Class.forName("com.mysql.jdbc.Driver").newInstance();
                                     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Cawa","root","");
-                                    String Query = "Select Titre,Resume,NbPage,Domaine from livre";
+                                    String Query = "Select Titre,Resume,NbPage,Domaine,Auteur from livre";
                                     Statement stm=conn.createStatement();
                                     ResultSet rs = stm.executeQuery(Query);
                                     while(rs.next()){
                                         
                                   %>
-                                    <div class="box" id="box">
+                                     <div class="box" id="box">
                                         <article class="media" id="MediaToClose">
                                        <figure class="media-left">
                                          <p class="image is-128x128">
@@ -118,22 +118,16 @@
                                          <div class="content">                                          
                                            <ul>
                                                <li><strong>Titre : </strong><%=rs.getString("Titre")%></li>
+                                               <li><strong>Ecrit par : </strong><%=rs.getString("Auteur")%></li>
                                                <li><strong>Domaine : </strong><%=rs.getString("Domaine")%></li>
                                                <li><strong>Nb Pages : </strong><%=rs.getInt("NbPage")%></li>
                                                <li><strong>Resumé : </strong><%=rs.getString("Resume")%></li>
                                            </ul>
                                          </div>
                                        </div>
-                                       <div class="media-right">
-                                           <button class="delete" id="delete">        
-                                           </button>
-                                            
-                                       </div>
-                                           
                                      </article>
-                               
-                                    </div>
-                                                       
+                               </div>
+                                            
                                   <%
                                     }
                                 }
@@ -150,20 +144,13 @@
     
     <script src="js/main.js"></script>
    <!-- <script>
-        document.getElementById("delete").onclick = function() { 
-            
+        document.getElementById("delete").onclick = function() {      
             document.getElementById("box").style.display = "none"; 
         } 
     </script>
    -->
-   <script>
-        const z = document.getElementById('delete');
-        const y = document.getElementById('box');
+  
 
-        z.onclick = () => {
-            y.style.display = 'none';
-        };
-   </script>
     
 <body>
     

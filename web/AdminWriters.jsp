@@ -122,12 +122,12 @@
                   <form action="AddWriter" method="get">
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label">Writer's family name</label>
+                            <label class="label">Writer's family name*</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
                             <p class="control is-expanded has-icons-left">
-                                <input class="input" type="text" placeholder="Ferhat" name="WriterFamilyName">
+                                <input class="input" type="text" placeholder="Ferhat" name="WriterFamilyName" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -138,12 +138,12 @@
                     <br>
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label">Writer's first name</label>
+                            <label class="label">Writer's first name*</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
                             <p class="control is-expanded has-icons-left">
-                                <input class="input" type="text" placeholder="Yacine" name="WriterFirstName">
+                                <input class="input" type="text" placeholder="Yacine" name="WriterFirstName" required>
                                 <span class="icon is-small is-left">
                                     <i class="fas fa-user"></i>
                                 </span>
@@ -154,12 +154,12 @@
                     <br>
                     <div class="field is-horizontal">
                         <div class="field-label is-normal">
-                            <label class="label">Writer's Birth</label>
+                            <label class="label">Writer's Birth*</label>
                         </div>
                         <div class="field-body">
                             <div class="field">
                                 <p class="control is-expanded has-icons-left has-icons-right">
-                                    <input class="input" type="date" name="WriterBirth">                                                <span class="icon is-small is-left">
+                                    <input class="input" type="date" name="WriterBirth" required>                                                <span class="icon is-small is-left">
                                         <i class="far fa-calendar-alt"></i>
                                     </span>
                                 </p>

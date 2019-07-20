@@ -3,18 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminWriters.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/ModifyBook.jsp</file>
             <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/Index.java</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/WEB-INF/web.xml</file>
             <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/HomeUser.jsp</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminBooks.jsp</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/HeaderResearch.jsp</file>
             <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminUsers.jsp</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/AddUser.java</file>
             <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminUsersResearch.jsp</file>
             <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminBooksResearch.jsp</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminWritersResearch.jsp</file>
-            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/Header.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/RegisterUser.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/HomeUserResearch.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/EditBook.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminWriters.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/js/check.js</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/DeleteWriter.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/AdminBooks.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/AddBook.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/Validate.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/AddUser.java</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/web/index.jsp</file>
+            <file>file:/C:/Users/Ferhat%20Yacine/Documents/NetBeansProjects/ProjetCawa/src/java/DeleteBook.java</file>
         </group>
     </open-files>
 </project-private>
